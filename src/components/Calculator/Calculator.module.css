@@ -37,3 +37,8 @@ button {
 .orangeColor {
     background-color: #FFA500;
 }
+
+.equalBtn {
+    grid-column: 3;
+    width: 200%;
+}
