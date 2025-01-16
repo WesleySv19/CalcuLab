@@ -1,0 +1,39 @@
+button {
+    width: 3em;
+    height: 3em;
+    font-size: 1.2em;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0.3em;
+}
+
+.calc_container {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    background-color: #171515;
+    border-radius: 30px;
+}
+
+.btn_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr
+}
+
+.result {
+    text-align: end;
+    padding: 0.5em;
+    font-size: 1em;
+    background-color: #171515;
+    color: #fff;
+}
+
+.orangeColor {
+    background-color: #FFA500;
+}
