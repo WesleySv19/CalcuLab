@@ -34,7 +34,7 @@ const Calculator = () => {
           <button onClick={() => clearDisplay()} className={styles.btns}>C</button>
           <button onClick={() => handleOperator('+')} className={`${styles.btns} ${styles.orangeColor}`}>+</button>
 
-          <button onClick={() => handleEqual()} className={styles.btns}>=</button>
+          <button onClick={() => handleEqual()} className={`${styles.btns} ${styles.equalBtn} ${styles.orangeColor}`}>=</button>
         </div>
       </div>
     </div>
