@@ -5,6 +5,7 @@ export default function useCalculator() {
     const [firstOperand, setFirstOperand] = useState(null) // Primeiro número a ser calculado
     const [operator, setOperator] = useState(null) // Operardor de calculo
     const [waitingForSecondOperand, setWaitingForSecondOperand] = useState(false) // Aguardando o segundo número
+    const [history, setHistory] = useState([]) // Armazena o histórico
 
     // Adicionar os dígitos
 
@@ -71,11 +72,15 @@ export default function useCalculator() {
 
     const handleEqual = () => {
         if(operator && firstOperand !== null) {
+            const secondOperand = parseFloat(displayValue)
             const result = peformCalculation(
                 operator, 
                 firstOperand,
                 parseFloat(displayValue)
             )
+
+            const operation = `${firstOperand} ${operator} ${secondOperand} = ${result}`
+            setHistory((prev) => [operation, ...prev])
 
             setDisplayValue(String(result))
             setFirstOperand(null)
@@ -89,7 +94,10 @@ export default function useCalculator() {
         setFirstOperand(null)
         setOperator(null)
         setWaitingForSecondOperand(false)
+        setHistory([])
     }
+
+    const clearHistoryOnly = 0
 
 
     return { 
@@ -98,5 +106,7 @@ export default function useCalculator() {
         handleOperator, 
         handleDecimal, 
         handleEqual, 
-        clearDisplay }
+        clearDisplay,
+        history
+    }
 }
