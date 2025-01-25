@@ -97,9 +97,6 @@ export default function useCalculator() {
         setHistory([])
     }
 
-    const clearHistoryOnly = 0
-
-
     return { 
         displayValue, 
         handleDigit, 
