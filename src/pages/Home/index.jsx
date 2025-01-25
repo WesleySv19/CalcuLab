@@ -10,6 +10,7 @@ const Home = () => {
     handleOperator,
     handleDecimal,
     handleEqual,
+    history,
     clearDisplay } = useCalculator()
 
 
@@ -17,7 +18,7 @@ const Home = () => {
     <div className={styles.calc_container}>
       <div className={styles.calculator}>
 
-      <Sidebar />
+      <Sidebar history={history} clearDisplay={clearDisplay}/>
 
         <input className={styles.result} type="text" value={displayValue} disabled />
 
